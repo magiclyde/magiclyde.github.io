@@ -1,0 +1,119 @@
+<!doctype html>
+<html amp lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="canonical" href="https://magiclyde.me/index.html">
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+        <meta name="author" content="Clyde Chan">
+        <meta name="keywords" content="AMP,service worker,google analytics,ogp">
+        <meta name="description" content="This is the magiclyde's home page implemented in AMP.">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="Clyde Chan">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="application-name" content="AMP by Example">
+        <meta name="amp-google-client-id-api" content="googleanalytics">
+        <meta property="og:site_name" content="magiclyde.me">
+        <meta property="og:title" content="magiclyde's home page.">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://magiclyde.me/asset/images/m.png">
+        <meta property="og:description" content="Younger than yesterday.">
+        <meta property="og:url" content="https://magiclyde.me">
+        <meta property="fb:app_id" content="1079478488829375">
+
+        <title>Clyde Chan</title>
+        
+        <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+        <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
+        <link href="https://fonts.gstatic.com" rel="dns-prefetch preconnect" crossorigin>
+        <!-- <link rel="preload" href="/asset/images/over-the-hill.jpg" as="image"> -->
+
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+        <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
+        <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+        <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+        <script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
+        <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+        <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+        <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+        <script async custom-element="amp-facebook-like" src="https://cdn.ampproject.org/v0/amp-facebook-like-0.1.js"></script>
+        <script async custom-element="amp-facebook-comments" src="https://cdn.ampproject.org/v0/amp-facebook-comments-0.1.js"></script>
+        <!-- <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+        <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script> -->
+        
+        <link rel="manifest" href="/manifest.json?v=cf5e0d">
+        <link rel="apple-touch-icon" sizes="180x180" href="/asset/images/logo-180x180.png">
+        <link rel="shortcut icon" href="asset/images/logo.ico">
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+        <style amp-custom>body,html{background:#f9f7f7;height:100%;padding:0;margin:0}.wraper{margin:20px}.content{margin:0 auto;max-width:760px;background:#fff;box-shadow:0 1px 1px 0 rgba(0,0,0,.14),0 1px 1px -1px rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)}.content h1{font-family:Inconsolata,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Arial,sans-serif}.heading,.social{padding:1rem}.intro{font-weight:500;color:#4a4a4a}div.like{margin-top: 10px;}.comments{margin:10px;border-top: 1px solid #e9ebee;border-width: 1px 0;padding-top: 10px }.ads{margin-bottom:20px;}</style>
+        <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    </head>
+    <body>
+        <div class="wraper">
+            <div class="content">
+                <div class="heading">
+                    <h1>Clyde Chan</h1>
+                    <div class="intro">
+                        A web developer, living in Guangzhou who likes to write, enjoys working in technology.<br>My usual nickname is magiclyde. 
+                    </div>
+                    <div class="like">
+                        <amp-facebook-like width="110"
+                          height="32"
+                          layout="fixed"
+                          data-layout="button_count"
+                          data-href="https://magiclyde.me">
+                        </amp-facebook-like>
+                    </div> 
+                </div>
+                <div class="ads">
+                    <!-- <amp-ad width="100vw" height=320
+                      type="adsense"
+                      data-ad-client="ca-pub-8347213343624254"
+                      data-ad-slot="5215106071"
+                      data-auto-format="fluid"
+                      data-full-width>
+                        <div overflow></div>
+                    </amp-ad> -->
+                    
+                    <!-- <amp-auto-ads type="adsense"
+                        data-ad-client="ca-pub-8347213343624254">
+                    </amp-auto-ads> -->
+                </div>
+                <div class="gallery">
+                    <amp-carousel lightbox layout="responsive" height="683" width="1024" type="slides">
+                        <amp-img src="/asset/images/over-the-hill.jpg" layout="fill" alt="Over The Hill"></amp-img>
+                        <amp-img src="/asset/images/kid-n-sunlight.jpg" layout="fill" alt="Kid N Sunlight"></amp-img>
+                        <!-- <amp-img src="/asset/images/carousel/1024x683/alone-backlit-bench-1280162.webp" layout="fill" alt="alone backlit bench"></amp-img> -->
+                    </amp-carousel>
+                </div>
+                <div class="social">
+                    <amp-list src="/json/me.json?v=2fef66" height="60" layout="fixed-height">
+                        <template type="amp-mustache">
+                            {{#icons}} 
+                            <a data-vars-outbound-link="{{href}}" href="{{href}}">
+                                <amp-img layout="fixed" height="32" width="32" src="/{{src}}" alt="{{alt}}"></amp-img>
+                            </a>
+                            {{/icons}} 
+                        </template>
+                    </amp-list>
+                </div>
+                <div class="comments">
+                    <amp-facebook-comments width=486 height=657
+                        layout="responsive"
+                        data-numposts="5"
+                        data-href="https://magiclyde.me">
+                    </amp-facebook-comments>
+                </div>
+            </div>
+        </div>
+        <amp-install-serviceworker src="/sw.js?v=4e74er" data-iframe-src="/index.html" layout="nodisplay"></amp-install-serviceworker>
+        <amp-analytics type="googleanalytics" id="analytics">
+            <script type="application/json">
+                {"vars":{"account":"UA-87477811-1"},"extraUrlParams":{"cd1":"online"},"triggers":{"trackPageview":{"on":"visible","request":"pageview"},"trackClickOnTwitterLink":{"on":"click","selector":"#tweet-link","request":"social","vars":{"socialNetwork":"twitter","socialAction":"tweet","socialTarget":"https://twitter.com/magiclyde"}},"trackAnchorClicks":{"on":"click","selector":"a","request":"event","vars":{"eventId":"42","eventLabel":"clicked on a link"}},"outboundLinks":{"on":"click","selector":"a","request":"event","vars":{"eventCategory":"outbound","eventAction":"click","eventValue":"${outboundLink}"}},"trackEvent":{"selector":"#event-test","on":"click","request":"event","vars":{"eventCategory":"event-test","eventAction":"click"},"extraUrlParams":{"cm":"campaign medium","cn":"campaign name","cs":"campaign source"}}}}
+            </script>
+        </amp-analytics>
+
+    </body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "short_name": "Clyde Chan",
+  "name": "Clyde Chan's home",
+  "background_color": "#f9f7f7",
+  "theme_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "asset/images/logo-48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "asset/images/logo-180x180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "asset/images/logo-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/?utm_source=homescreen&utm_medium=launcher",
+  "gcm_sender_id": "103953800507"
+}
