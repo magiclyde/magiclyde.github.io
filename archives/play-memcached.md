@@ -95,6 +95,7 @@ memcached 不能以 root 用户启动，所以先创建个专属用户并设置�
 
 
 **查看 sasl 账号列表**
+
     # sasldblistusers2
     memcachedadmin@localhost.localdomain: userPassword
 
