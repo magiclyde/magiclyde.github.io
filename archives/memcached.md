@@ -26,7 +26,6 @@
     cyrus-sasl-lib-2.1.26-23.el7.x86_64
 
 
-
 ### 2. 安装 memcached
 
     # wget http://www.memcached.org/files/memcached-1.5.0.tar.gz
@@ -48,6 +47,7 @@ memcached 不能以 root 用户启动，所以先创建个专属用户并设置�
 
 #### 3.2 启动 sasl 服务
 **查看 saslauthd 版本及支持的验证方式**
+
     # saslauthd -v
     saslauthd 2.1.26
     authentication mechanisms: getpwent kerberos5 pam rimap shadow ldap httpform
@@ -59,18 +59,21 @@ memcached 不能以 root 用户启动，所以先创建个专属用户并设置�
 
 
 **启动 sasl 服务**
+
     # service saslauthd restart 
 	
 
 #### 3.3 测试 sasl 用户认证
 
 **测试 saslauthd 的认证功能**
+
     # testsaslauthd -u os_user -p passwd_of_os_user
 
     # testsaslauthd -u memcachedadmin -p 'xxx' 
     0: NO "authentication failed"
 
 (⊙o⊙)… 验证错误，查看系统日志
+
     # tail  /var/log/messages
     Jun 19 11:50:36 localhost systemd: Started SASL authentication daemon..
     Jun 19 11:50:52 localhost saslauthd[14792]: do_auth         : auth failure: [user=memcachedadmin] [service=imap] [realm=] [mech=shadow] [reason=Username shadow lookup failure: Permission denied]
@@ -82,6 +85,7 @@ memcached 不能以 root 用户启动，所以先创建个专属用户并设置�
     # setsebool -P saslauthd_read_shadow on
 
 再次测试 ok
+
     # testsaslauthd -u memcachedadmin -p 'xxx'
     0: OK "Success."
 
@@ -119,6 +123,7 @@ memcached 不能以 root 用户启动，所以先创建个专属用户并设置�
 更多选项 /usr/local/memcached/bin/memcached -h
 
 ### 4. 连接、验证 memcached with sasl 
+
     # yum install python-pip
     # pip install python-binary-memcached
 
