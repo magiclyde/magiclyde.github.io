@@ -5,27 +5,24 @@
  *
  * @see https://www.cnblogs.com/jajian/p/10896624.html
  * @example
-    
-        $ch =   new ConsistentHash();
-
-        $ch->addNode('a');
-        $ch->addNode('b');
-        $ch->addNode('c');
-        $ch->addNode('d');
-
-        $key1 = '41.63.160.0'; 
-        $key2 = '66.178.44.136'; 
-        $key3 = '4.69.240.28'; 
-        echo 'key ' . $key1 . ' in: ' . $ch->lookup($key1) . ' node' . PHP_EOL;
-        echo 'key ' . $key2 . ' in: ' . $ch->lookup($key2) . ' node' . PHP_EOL;
-        echo 'key ' . $key3 . ' in: ' . $ch->lookup($key3) . ' node' . PHP_EOL;
-    
+ *   
+ *       $ch =   new ConsistentHash();
+ *       $ch->addNode('a');
+ *       $ch->addNode('b');
+ *       $ch->addNode('c');
+ *       $ch->addNode('d');
+ *       $key1 = '41.63.160.0'; 
+ *       $key2 = '66.178.44.136'; 
+ *       $key3 = '4.69.240.28'; 
+ *       echo 'key ' . $key1 . ' in: ' . $ch->lookup($key1) . ' node' . PHP_EOL;
+ *       echo 'key ' . $key2 . ' in: ' . $ch->lookup($key2) . ' node' . PHP_EOL;
+ *       echo 'key ' . $key3 . ' in: ' . $ch->lookup($key3) . ' node' . PHP_EOL; 
  */
 class ConsistentHash
 {
     protected $nodes = []; // 物理节点
     protected $position = []; // 虚拟节点
-	protected $mul = 64; // 每个物理节点对应64个虚拟节点
+    protected $mul = 64; // 每个物理节点对应64个虚拟节点
 
 
     public function lookup($key)
@@ -59,6 +56,7 @@ class ConsistentHash
             $this->nodes[$node][] = $pos;
         }
 
+        // 重排位置
         $this->sortPos();
     }
 
@@ -78,10 +76,14 @@ class ConsistentHash
         unset($this->nodes[$node]);
     }
 
+    /**
+     * 把字符串转为32位符号整数
+     */ 
     protected function hash($str)
     {
         return sprintf("%u", crc32($str));
     }
+
 
     protected function sortPos()
     {
@@ -89,5 +91,3 @@ class ConsistentHash
     }
 
 }
-
-
