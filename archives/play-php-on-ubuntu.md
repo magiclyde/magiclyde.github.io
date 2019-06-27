@@ -39,6 +39,9 @@
     cp php-fpm.conf.default php-fpm.conf  
     cp php-fpm.d/www.conf.default php-fpm.d/www.conf  
 
+### Add default user's group
+    groupadd nobody 
+
 
 ### Start php-fpm
     sudo php-fpm -c /usr/local/php7/etc/php-fpm.conf
