@@ -1,0 +1,19 @@
+{
+	"bookendVersion": "v1.0",
+	"shareProviders": [
+		"facebook",
+		"twitter"
+	],
+	"components": [{
+			"type": "heading",
+			"text": "More to read"
+		},
+		{
+			"type": "cta-link",
+			"links": [{
+				"text": "Learn more",
+				"url": "https://magiclyde.me"
+			}]
+		}
+	]
+}
