@@ -25,7 +25,7 @@
     wget https://www.php.net/distributions/php-7.3.6.tar.bz2
     tar -jxvf php-7.3.6.tar.bz2
     cd php-7.3.6
-    ./configure --prefix=/usr/local/php7 --with-config-file-path=/usr/local/php7/etc --enable-fpm --enable-mbstring --enable-pcntl  --enable-sockets --enable-pdo --with-zlib --with-curl --with-mysqli --with-mysql-sock --with-pdo-mysql --with-gettext --with-gd --with-freetype-dir=/usr/local/freetype/2.7.1/ --with-jpeg-dir=/usr/local/jpeg/  --with-openssl
+    ./configure --prefix=/usr/local/php7 --with-config-file-path=/usr/local/php7/etc --enable-fpm --enable-mbstring --enable-pcntl  --enable-sockets --enable-pdo --enable-exif --with-zlib --with-curl --with-mysqli --with-mysql-sock --with-pdo-mysql --with-gettext --with-gd --with-freetype-dir=/usr/local/freetype/2.7.1/ --with-jpeg-dir=/usr/local/jpeg/  --with-openssl 
     make && make install
 
 ### Setting php.ini
@@ -62,7 +62,7 @@
 
 ### Add init.d script
 
-    cd php-7.3.6 ## your source code path
+    cd php-7.3.6 ## path/to/php-src 
     cp sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
     sudo chmod +x /etc/init.d/php-fpm
     update-rc.d php-fpm defaults
