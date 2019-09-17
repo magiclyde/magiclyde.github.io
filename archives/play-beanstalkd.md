@@ -1,4 +1,4 @@
-## What is it?
+## What Is It?
 Beanstalk is a simple, fast work queue.  
 more and see https://beanstalkd.github.io
 
@@ -9,27 +9,26 @@ more and see https://beanstalkd.github.io
 - tube：消息通道，类似于 kafka 里面的 topic, 用来存储某一类或者业务的任务，每个 tube 可有多个 job
 - job：生产和消费的基本单元，每个 job 都会有一个 id 和 优先级，以及不同状态
 
+> Job Status
 
-### Job status
-
-           put with delay               release with delay
-          ----------------> [DELAYED] <------------.
-                                |                   |
-                         kick   | (time passes)     |
-                                |                   |
-           put                  v     reserve       |       delete
-          -----------------> [READY] ---------> [RESERVED] --------> *poof*
-                               ^  ^                |  |
-                               |   \  release      |  |
-                               |    `-------------'   |
-                               |                      |
-                               | kick                 |
-                               |                      |
-                               |       bury           |
-                            [BURIED] <---------------'
-                               |
-                               |  delete
-                                `--------> *poof*
+       put with delay               release with delay
+      ----------------> [DELAYED] <------------.
+                            |                   |
+                     kick   | (time passes)     |
+                            |                   |
+       put                  v     reserve       |       delete
+      -----------------> [READY] ---------> [RESERVED] --------> *poof*
+                           ^  ^                |  |
+                           |   \  release      |  |
+                           |    `-------------'   |
+                           |                      |
+                           | kick                 |
+                           |                      |
+                           |       bury           |
+                        [BURIED] <---------------'
+                           |
+                           |  delete
+                            `--------> *poof*
 
 
 ## Installation
@@ -54,11 +53,11 @@ more and see https://beanstalkd.github.io
      -V       increase verbosity
      -h       show this help
     
-## Run it
+## Run It
 
     ./beanstalkd -l 127.0.0.1 -p 11300
 
-## Use it with php
+## Use It With Php
 
 ### Install Client Libraries
 
